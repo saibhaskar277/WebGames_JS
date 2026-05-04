@@ -3,6 +3,9 @@
 ## Overview
 A modular game development platform built with vanilla JavaScript and HTML5 Canvas. Currently features three games (Snake, Runner, and Bubble Popper) with a unified menu system, pause/resume, and restart functionality.
 
+## 🚀 Live Demo
+**[(https://saibhaskar277.github.io/WebGames_JS/)]**
+
 ## Current Games
 
 ### 🐍 Snake Game
