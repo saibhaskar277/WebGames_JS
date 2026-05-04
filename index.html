@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperCasual Games - Play Free Games</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <!-- Main Menu -->
+    <div id="menu-container" class="menu-container active">
+        <div class="menu-content">
+            <h1 class="menu-title">🎮 HyperCasual Games</h1>
+            <p class="menu-subtitle">Choose a game to play</p>
+            
+            <div class="games-grid">
+                <button class="game-card" data-game="snake">
+                    <div class="game-icon">🐍</div>
+                    <div class="game-name">Snake</div>
+                    <div class="game-desc">Classic snake game - eat food and grow!</div>
+                </button>
+                
+                <button class="game-card" data-game="runner">
+                    <div class="game-icon">🏃</div>
+                    <div class="game-name">Runner</div>
+                    <div class="game-desc">Tap to jump over obstacles!</div>
+                </button>
+
+                <button class="game-card" data-game="bubblepopper">
+                    <div class="game-icon">🫧</div>
+                    <div class="game-name">Bubble Popper</div>
+                    <div class="game-desc">Click bubbles before they disappear!</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Container -->
+    <div id="game-container" class="game-container">
+        <div class="game-header">
+            <h2 id="game-title"></h2>
+            <div class="header-buttons">
+                <button id="restart-btn" class="restart-btn">🔄 Restart (R)</button>
+                <button id="pause-btn" class="pause-btn">⏸ Pause (P)</button>
+                <button id="menu-btn" class="menu-btn">← Back to Menu</button>
+            </div>
+        </div>
+        
+        <div class="game-wrapper">
+            <!-- Input Guide (10%) -->
+            <div id="input-guide" class="input-guide">
+                <div class="input-guide-header">⌨️ Controls</div>
+                <div id="input-list" class="input-list"></div>
+            </div>
+            
+            <!-- Game Canvas (90%) -->
+            <div id="game-content" class="game-content">
+                <canvas id="game-canvas"></canvas>
+            </div>
+        </div>
+        
+        <div id="game-info">
+            <span id="score"></span>
+            <span id="game-status"></span>
+        </div>
+    </div>
+
+    <!-- Pause Modal (Generic, reusable for all games) -->
+    <div id="pause-modal" class="pause-modal">
+        <div class="pause-modal-content">
+            <h2>⏸ Game Paused</h2>
+            <p>Your game is paused. Click resume to continue.</p>
+            <div class="pause-modal-buttons">
+                <button id="resume-btn" class="resume-btn">▶ Resume (P)</button>
+                <button id="pause-menu-btn" class="pause-menu-btn">← Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Scripts -->
+    <script src="js/gameController.js"></script>
+    <script src="js/games/common/tiledLoader.js"></script>
+    <script src="js/games/snake/snake.js"></script>
+    <script src="js/games/runner/runner.js"></script>
+    <script src="js/games/bubblepopper/bubblepopper.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "Runner",
+  "description": "Tap to jump over obstacles in this endless runner!",
+  "version": "1.0.0",
+  "author": "HyperCasual Games",
+  "controls": {
+    "jump": ["Click", "Space"],
+    "pause": "P",
+    "restart": "R"
+  },
+  "mechanics": {
+    "gravity": 0.8,
+    "jumpForce": -18,
+    "obstacleSpeed": 3,
+    "spawnRate": 0.008,
+    "difficultyScaling": true,
+    "minObstacleSpacing": 200
+  },
+  "colors": {
+    "sky": "#87CEEB",
+    "ground": "#8B4513",
+    "grass": "#228B22",
+    "player": "#4CAF50"
+  }
+}

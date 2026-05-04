@@ -1,0 +1,30 @@
+{
+  "game": "snake",
+  "version": "1.0",
+  "description": "Snake game configuration - classic maze-free gameplay",
+  "gameplay": {
+    "gridSize": 20,
+    "initialLength": 3,
+    "foodSpawnRate": "random"
+  },
+  "assets": {
+    "sprites": [
+      "snake_head.png",
+      "snake_body.png",
+      "food.png"
+    ],
+    "backgrounds": [
+      "background.png"
+    ]
+  },
+  "levels": [
+    {
+      "id": 1,
+      "name": "Classic Mode",
+      "difficulty": "easy",
+      "gridWidth": 40,
+      "gridHeight": 30
+    }
+  ],
+  "notes": "Snake game doesn't use Tiled maps - can add tile-based maze levels in the future by adding level JSON files in tiles/ folder"
+}

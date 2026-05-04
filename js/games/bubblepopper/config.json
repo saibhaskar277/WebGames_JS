@@ -1,0 +1,23 @@
+{
+  "name": "Bubble Popper",
+  "description": "Click bubbles before they disappear! Build combos for higher scores!",
+  "version": "1.0.0",
+  "author": "HyperCasual Games",
+  "controls": {
+    "pop": ["Click"],
+    "pause": "P",
+    "restart": "R"
+  },
+  "mechanics": {
+    "bubbleLifetime": 240,
+    "comboSystem": true,
+    "spawnRate": 0.015,
+    "maxBubbles": 25,
+    "difficultyScaling": true
+  },
+  "colors": {
+    "background": ["#E8F5E8", "#F0F8FF"],
+    "bubbles": ["#FF6B6B", "#4ECDC4", "#45B7D1", "#96CEB4", "#FFEAA7", "#DDA0DD", "#98D8C8"],
+    "combo": "#FF5722"
+  }
+}

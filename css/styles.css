@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.game-header h2 {
+    font-size: 24px;
+    margin: 0;
+    flex: 1;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.pause-btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.pause-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.pause-btn.active {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.restart-btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.restart-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.menu-btn {
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Game wrapper for 10/90 split */
+.game-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    min-height: 0; /* Important for flex children */
+}
+
+/* Input guide - 10% width */
+.input-guide {
+    width: 10%;
+    background-color: #2a2a2a;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    padding: 12px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-guide-header {
+    font-size: 14px;
+    font-weight: bold;
+    color: #667eea;
+    text-align: center;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 8px;
+}
+
+.input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-item {
+    font-size: 12px;
+    color: #e0e0e0;
+    line-height: 1.4;
+    background-color: #333;
+    padding: 8px;
+    border-radius: 4px;
+    border-left: 3px solid #764ba2;
+}
+
+.input-key {
+    color: #667eea;
+    font-weight: bold;
+    display: inline-block;
+    background-color: #1a1a1a;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+}
+
+/* Game content - 90% width */
+.game-content {
+    flex: 1;
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Game Info Section */
+#game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-top: 1px solid #444;
+    font-size: 16px;
+}
+
+#score {
+    font-weight: bold;
+    color: #667eea;
+}
+
+#game-status {
+    text-align: right;
+    max-width: 50%;
+    word-wrap: break-word;
+}
+
+/* Pause Modal Styling */
+.pause-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pause-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.pause-modal-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease;
+    min-width: 400px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pause-modal-content h2 {
+    font-size: 48px;
+    color: white;
+    margin: 0 0 15px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pause-modal-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 30px 0;
+}
+
+.pause-modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.resume-btn,
+.pause-menu-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.resume-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.resume-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.pause-menu-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.pause-menu-btn:hover {
+    background-color: #da190b;
+    transform: scale(1.05);
+}
